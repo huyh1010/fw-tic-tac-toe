@@ -40,7 +40,13 @@ function Game() {
 
   //Handle player
   const handleClick = (i) => {
-    "Your code here";
+    if (squares[i] || calculateWinner(squares)) {
+      return;
+    }
+    const nextSquares = squares.slice();
+    xIsNext ? (nextSquares[i] = "X") : (nextSquares[i] = "O");
+    setSquares(nextSquares);
+    setXIsNext(!xIsNext);
   };
 
   //Restart game
@@ -53,7 +59,7 @@ function Game() {
       <h2 className="result">Winner is: {winner ? winner : "N/N"}</h2>
       <div className="game">
         <span className="player">Next player is: {xIsNext ? "X" : "O"}</span>
-        <Board squares={"Your code here"} handleClick={"Your code here"} />
+        <Board squares={squares} handleClick={handleClick} />
       </div>
       <button onClick={"Your code here"} className="restart-btn">
         Restart
