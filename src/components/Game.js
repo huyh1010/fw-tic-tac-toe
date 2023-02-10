@@ -5,8 +5,6 @@ function Game() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
   const [winner, setWinner] = useState(null);
-  const [history, setHistory] = useState(Array(9).fill(null));
-  const currentSquares = history[history.length - 1];
 
   //Declaring a Winner
   useEffect(() => {
@@ -47,7 +45,7 @@ function Game() {
       return;
     }
     const nextSquares = squares.slice();
-    xIsNext ? (nextSquares[i] = "X") : (nextSquares[i] = "O");
+    nextSquares[i] = xIsNext ? "X" : "O";
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
   };
