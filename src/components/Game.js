@@ -5,10 +5,13 @@ function Game() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
   const [winner, setWinner] = useState(null);
+  const [history, setHistory] = useState(Array(9).fill(null));
+  const currentSquares = history[history.length - 1];
 
   //Declaring a Winner
   useEffect(() => {
-    "Your code here";
+    const win = calculateWinner(squares);
+    setWinner(win);
   }, [squares]);
 
   //function to check if a player has won.
@@ -51,7 +54,8 @@ function Game() {
 
   //Restart game
   const handlRestart = () => {
-    "Your code here";
+    setSquares(Array(9).fill(null));
+    setXIsNext(true);
   };
 
   return (
@@ -61,7 +65,7 @@ function Game() {
         <span className="player">Next player is: {xIsNext ? "X" : "O"}</span>
         <Board squares={squares} handleClick={handleClick} />
       </div>
-      <button onClick={"Your code here"} className="restart-btn">
+      <button onClick={handlRestart} className="restart-btn">
         Restart
       </button>
     </div>

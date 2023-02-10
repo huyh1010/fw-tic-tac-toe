@@ -15,10 +15,10 @@ body {
 }
 
 .main {
-  background-color: #e0e9f1;
+  background-color: rgb(14, 17, 106);
   border-radius: 5px;
   box-shadow: 2px 2px 7px 1px rgb(184 197 206 / 70%);
-  color: #000;
+  color: white;
   gap: 20px;
   padding: 20px;
   display: flex;
@@ -54,18 +54,20 @@ body {
 
 .square {
   background: #fff;
-  border: 1px solid #999;
+  border: 1px solid #00ffff;
   float: left;
   font-size: 24px;
   font-weight: bold;
   line-height: 40px;
-  height: 40px;
+  height: 70px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 40px;
-  text-shadow: 1px 2px 2px #ce5937;
+  width: 70px;
+  color: #5271ff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #5271ff,
+    0 0 82px #5271ff, 0 0 92px #5271ff, 0 0 102px #5271ff, 0 0 151px #5271ff;
   cursor: pointer;
 }
 
