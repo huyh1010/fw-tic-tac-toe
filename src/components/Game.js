@@ -48,6 +48,7 @@ function Game() {
     nextSquares[i] = xIsNext ? "X" : "O";
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
+    console.log(nextSquares);
   };
 
   //Restart game
